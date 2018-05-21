@@ -7,6 +7,13 @@ Scripts used in the process of a Docker image build and/or used to trigger proce
 Utility used as helper in the process of building parts of a Docker image, plus configurator to trigger processes
 when a container is launched, plus services daemon launcher, plus signal processor to communicate with such processes.
 
+This was created in order to have a common structure to use when processing building pieces for a Docker image. 
+Later, the objective became broader, as it now is used to deploy processes run by the container too, and respond
+to signals. It's the replacement for supervisor.
+
+In the case of the folder structure, this command aims for something as defined in the example folder shown in this
+repo. Please, check that for deeper information.
+
 ## Folder Structure
 
 It's really simple, aimed to enable program distribution under different formats. 
@@ -14,13 +21,14 @@ It's really simple, aimed to enable program distribution under different formats
 - ***src***: contains all the real code on the solution.
 - ***snap***: configurations to create a snap package on the project.
 - ***Makefile***: configurations to install the package but using the ubiquitous make tool.
+- ***example***: boilerplate to be used when a process config/run step is required.
 
 ## Source Code Explanation
 
 Next an explanation of each file here defined:
 
 * `src/usr/bin/kick-off`: Command aimed to perform all the operations. Behavior is controlled by parameters passed.
-For more info, check command file itself, or simply run <command> --help.
+as shown before.
 
 # Makefile
 
